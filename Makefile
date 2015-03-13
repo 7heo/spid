@@ -1,3 +1,9 @@
+# Altho it is totally possible to strip most of this Makefile and leave only the
+# `spid` rule, along with the `all` rule (dependent on the former one), I prefer
+# to have an explicit `spid.exe` rule producing the `.exe` binary on windows, in
+# case the compiler doesn't automatically produce `.exe` files out of extension-
+# less names passed to the output flag.
+
 ifeq ($(OS),Windows_NT)
     DEFAULT_BIN = spid.exe
     CCFLAGS += -D WIN32
